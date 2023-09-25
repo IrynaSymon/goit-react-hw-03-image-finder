@@ -5,10 +5,6 @@ import { MdOutlineSearch } from 'react-icons/md';
 import css from './Searchbar.module.css';
 
 export class SearchBar extends Component {
-  static propTypes = {
-    onSubmit: PropTypes.func.isRequired,
-  };
-
   state = {
     query: '',
   };
@@ -37,16 +33,17 @@ export class SearchBar extends Component {
       <header className={css.SearchHeader}>
         <form className={css.SearchForm} onSubmit={this.handleSubmit}>
           <button type="submit" className={css.SearchButton}>
-            <MdOutlineSearch style={{ width: 30, height: 30 }} />
+            <MdOutlineSearch style={{ width: 35, height: 35 }} />
+            <span className={css.SearchFormButtonLabel}>Search</span>
           </button>
 
           <input
             className={css.SearchFormInput}
             type="text"
             name="query"
+            autoComplete="off"
             value={query}
             onChange={this.handleChange}
-            autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
           />
@@ -55,3 +52,6 @@ export class SearchBar extends Component {
     );
   }
 }
+SearchBar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
