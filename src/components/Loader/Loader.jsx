@@ -1,10 +1,9 @@
 import { TailSpin } from 'react-loader-spinner';
-import { StyledLoader } from './Loader.styled';
-
+import css from './Loader.module.css';
 export const Loader = () => {
   return (
-    <StyledLoader>
+    <div className={css.StyledLoader}>
       <TailSpin />
-    </StyledLoader>
+    </div>
   );
 };

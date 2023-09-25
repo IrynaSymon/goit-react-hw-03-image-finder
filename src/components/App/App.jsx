@@ -4,10 +4,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { fetchData } from 'Pixabay/Pixabay';
 import { SearchBar } from 'components/Searchbar/Searchbar.jsx';
 import { ImageGallery } from 'components/ImageGallery/ImageGallery';
+// import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 import { Button } from 'components/Button/Button';
 import { Modal } from 'components/Modal/Modal';
 import { Loader } from 'components/Loader/Loader';
-import { Container } from './App.styled';
+import css from './App.module.css';
 
 export class App extends Component {
   state = {
@@ -100,7 +101,7 @@ export class App extends Component {
     const loadMoreBtn = loadImages && !isLoading && !isLastPage;
 
     return (
-      <Container>
+      <div className={css.App}>
         <SearchBar onSubmit={this.handleSearch} />
 
         {error && toast.error(error.message)}
@@ -120,7 +121,7 @@ export class App extends Component {
         )}
 
         <ToastContainer theme="colored" position="top-right" autoClose={3000} />
-      </Container>
+      </div>
     );
   }
 }

@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import { StyledButton } from './Button.styled';
+import css from './Button.module.css';
 
 export const Button = ({ children, onClick }) => (
-  <StyledButton type="button" onClick={onClick}>
+  <button type="button" className={css.Button} onClick={onClick}>
     {children}
-  </StyledButton>
+  </button>
 );
 
 Button.propTypes = {

@@ -1,14 +1,8 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
-import { MdImageSearch } from 'react-icons/md';
-
-import {
-  SearchHeader,
-  SearchForm,
-  SearchFormInput,
-  SearchButton,
-} from './Searchbar.styled';
+import { MdOutlineSearch } from 'react-icons/md';
+import css from './Searchbar.module.css';
 
 export class SearchBar extends Component {
   static propTypes = {
@@ -40,13 +34,14 @@ export class SearchBar extends Component {
     const { query } = this.state;
 
     return (
-      <SearchHeader>
-        <SearchForm onSubmit={this.handleSubmit}>
-          <SearchButton type="submit">
-            <MdImageSearch style={{ width: 30, height: 30 }} />
-          </SearchButton>
+      <header className={css.SearchHeader}>
+        <form className={css.SearchForm} onSubmit={this.handleSubmit}>
+          <button type="submit" className={css.SearchButton}>
+            <MdOutlineSearch style={{ width: 30, height: 30 }} />
+          </button>
 
-          <SearchFormInput
+          <input
+            className={css.SearchFormInput}
             type="text"
             name="query"
             value={query}
@@ -55,8 +50,8 @@ export class SearchBar extends Component {
             autoFocus
             placeholder="Search images and photos"
           />
-        </SearchForm>
-      </SearchHeader>
+        </form>
+      </header>
     );
   }
 }
