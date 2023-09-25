@@ -56,12 +56,13 @@
 }
 
 .SearchFormInput::placeholder {
+  font: inherit;
   font-size: 18px;
-  background-color: transparent;
 }
 .SearchFormInput:hover,
 :focus {
   background-color: #fff;
+  outline: none;
 }
 .SearchButton {
   display: inline-block;
@@ -72,14 +73,12 @@
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.6;
-  /* transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   outline: none;
   overflow: hidden;
 }
-.input {
-  background-color: #fff;
-}
+
 .SearchButton:hover {
   opacity: 1;
 }
